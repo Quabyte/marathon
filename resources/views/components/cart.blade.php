@@ -43,3 +43,8 @@
 		</div>
 	</form>
 @stop
+
+@section('scripts')
+	<script src="{{ asset('js/jquery.formatter.min.js') }}"></script>
+	<script src="{{ asset('js/formatter-js.min.js') }}"></script>
+@stop
