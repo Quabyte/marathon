@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Extra;
 use App\Order;
+use Carbon\Carbon;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -24,11 +25,12 @@ class ShoppingCartController extends Controller
 
         $order = Order::where('reference', '=', session('orderRef'))->firstOrFail();
         $order->status = 'cancelled';
+        $order->updated_at = Carbon::now('Europe/Istanbul');
         $order->save();
 
         session()->forget('orderRef');
 
-    	return redirect()->back();
+    	return redirect()->to('/');
     }
 
     public function payment()

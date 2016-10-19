@@ -22,7 +22,7 @@ class CreateAttendeesTable extends Migration
             $table->string('gender');
             $table->string('country');
             $table->string('city');
-            $table->bigInteger('phone');
+            $table->string('phone');
             $table->string('email');
 
             $table->integer('user_id')->unsigned();
