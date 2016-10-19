@@ -35,9 +35,15 @@
 }
 
 .innerContent .pageTitle {
-    font: 33px "Open Sans Bold",sans-serif;
+    font: 32px "Open Sans Bold",sans-serif;
     margin: -63px 0 42px 0;
     color: #fff;
+}
+
+@media (max-width: 320px) {
+   .innerContent .pageTitle {
+      font-size:28px;
+   }
 }
 
 .panel {
