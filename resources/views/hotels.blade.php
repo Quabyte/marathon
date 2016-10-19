@@ -58,7 +58,7 @@
 											<option value="">Room Type</option>
 											<option value="Single Room">Single Room</option>
 											<option value="Double Room">Double Room</option>
-											<option value="Triple Room">Triple Room</option>
+											{{-- <option value="Triple Room">Triple Room</option> --}}
 										</select>
 									</div>
 									<div class="col-md-2">

@@ -12,17 +12,17 @@ class HotelsTableSeeder extends Seeder
     public function run()
     {
         DB::table('hotels')->insert([
-        	'name' => 'Intercontinental Istanbul',
-        	'coverPhoto' => 'intercontinental',
-        	'rate' => 8.70,
-        	'location' => 'Beyoglu/Istanbul',
+        	'name' => 'Sura Design Hotel & Suites',
+        	'coverPhoto' => 'sura',
+        	'rate' => 8.80,
+        	'location' => 'Fatih/Istanbul',
         ]);
 
         DB::table('hotels')->insert([
-        	'name' => 'The Marmara Pera',
-        	'coverPhoto' => 'pera',
-        	'rate' => 8.00,
-        	'location' => 'Beyoglu/Istanbul',
+        	'name' => 'Hotellino Istanbul',
+        	'coverPhoto' => 'hotellino',
+        	'rate' => 8.90,
+        	'location' => 'Fatih/Istanbul',
         ]);
     }
 }
