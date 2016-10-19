@@ -30,7 +30,7 @@ class HotelsController extends Controller
         $order->reference = str_random(6);
         $order->total = $calculatedPrice;
         $order->currency = 978;
-        $order->created_at = Carbon::now();
+        $order->created_at = Carbon::now('Europe/Istanbul');
         $order->save();
 
         if (session()->has('orderRef')) {
@@ -43,7 +43,7 @@ class HotelsController extends Controller
         $orderItem->title = $hotelCombination;
         $orderItem->price = $calculatedPrice;
         $orderItem->order_id = $order->id;
-        $orderItem->created_at = Carbon::now();
+        $orderItem->created_at = Carbon::now('Europe/Istanbul');
         $orderItem->save();
 
         return redirect()->action('MarathonsController@index');
