@@ -13,6 +13,8 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 
 class HotelsController extends Controller
 {
+    private $cookie;
+
     public function addHotel(Request $request, $id)
     {
     	$hotel = Hotel::findOrFail($id);
@@ -33,11 +35,11 @@ class HotelsController extends Controller
         $order->created_at = Carbon::now('Europe/Istanbul');
         $order->save();
 
-        if (session()->has('orderRef')) {
-            session(['orderRef' => $order->reference]); 
-        } else {
-            session(['orderRef' => $order->reference]);
-        }
+        // if (session()->has('orderRef')) {
+        //     session(['orderRef' => $order->reference]); 
+        // } else {
+        //     session(['orderRef' => $order->reference]);
+        // }
 
         $orderItem = new OrderItem;
         $orderItem->title = $hotelCombination;
@@ -46,6 +48,6 @@ class HotelsController extends Controller
         $orderItem->created_at = Carbon::now('Europe/Istanbul');
         $orderItem->save();
 
-        return redirect()->action('MarathonsController@index');
+        return redirect()->action('MarathonsController@index')->withCookie('orderRef', $order->reference, 60);
     }
 }

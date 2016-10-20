@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Order;
 use App\Attendee;
 use Carbon\Carbon;
 use App\Http\Requests;
@@ -29,6 +30,13 @@ class AttendeesController extends Controller
     		], $messages);
     	}
 
+        $user = new User;
+        $user->name = $request->name1;
+        $user->email = $request->email1;
+        $user->password = bcrypt(session('orderRef'));
+        $user->created_at = Carbon::now('Europe/Istanbul');
+        $user->save();
+
     	for ($i=1; $i <= session('attendeeQty') ; $i++) {
     		$user = User::where('email', '=', $request->email1)->firstOrFail();
     		
@@ -47,12 +55,10 @@ class AttendeesController extends Controller
     		$attendee->save();
     	}
 
-        $user = new User;
-        $user->name = $request->name1;
-        $user->email = $request->email1;
-        $user->password = bcrypt(session('orderRef'));
-        $user->created_at = Carbon::now('Europe/Istanbul');
-        $user->save();
+        $createdUser = User::where('name', '=', $request->name1)->firstOrFail();
+        $currentOrder = Order::where('reference', '=', $request->cookie('orderRef'))->firstOrFail();
+        $currentOrder->user_id = $createdUser->id;
+        $currentOrder->save();
 
     	return redirect()->action('ShoppingCartController@payment');
     }
