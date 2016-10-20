@@ -20,3 +20,6 @@ Route::get('/cart/destroy', 'ShoppingCartController@destroy');
 Route::post('/add-attendees', 'AttendeesController@create');
 Route::get('/payment', 'ShoppingCartController@payment');
 Route::post('/addExtra/{id}', 'ApplicationController@addExtra');
+
+Route::get('/pay', 'PaymentController@send');
+Route::get('/payment-confirm', 'PaymentController@confirm')->name('payment');
