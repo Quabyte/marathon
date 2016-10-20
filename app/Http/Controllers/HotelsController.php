@@ -18,8 +18,11 @@ class HotelsController extends Controller
     public function addHotel(Request $request, $id)
     {
     	$hotel = Hotel::findOrFail($id);
-
-        $room = $hotel->rooms()->where('name', '=', $request->roomType)->first();
+        $room = Room::where([
+                ['hotel_id', '=', $hotel->id],
+                ['name', '=', $request->roomType],
+            ])->firstOrFail();
+        // $room = $hotel->rooms()->where('name', '=', $request->roomType)->firstOrFail();
         $calculatedPrice = Hotel::calculatePrice($request->checkIn, $request->checkOut, $room->price);
 
         $hotelCombination = $room->hotel->name . ' (' . $room->name . ')';
