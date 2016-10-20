@@ -1,4 +1,4 @@
-<div class="col-lg-12 form-group">
+{{-- <div class="col-lg-12 form-group">
   <div class="example-responsive example form-group">
     <div class="col-lg-12 col-md-6 clearfix form-group">
       <div class="card-wrapper" id="cardContainer"></div>
@@ -33,4 +33,7 @@
     </div>
     
   </div>
+</div> --}}
+<div class="col-md-6 col-md-offset-3">
+  <a href="{{ action('PaymentController@send') }}" class="btn btn-block btn-success"><i class="icon wb-payment"></i> Pay Now</a>
 </div>
