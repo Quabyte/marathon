@@ -36,7 +36,7 @@ class MarathonsController extends Controller
             session(['attendeeQty' => $totalAttendees]);
         }
 
-        $order = Order::where('reference', '=', session('orderRef'))->firstOrFail();
+        $order = Order::where('reference', '=', $request->cookie('orderRef'))->firstOrFail();
 
         if ($attendees1 > 0) {
             $marathon = Marathon::findOrFail(1);
@@ -84,7 +84,7 @@ class MarathonsController extends Controller
             $order->save();
         }
 
-        $order = Order::where('reference', '=', session('orderRef'))->firstOrFail();
+        $order = Order::where('reference', '=', $request->cookie('orderRef'))->firstOrFail();
         $order->total = Cart::total();
         $order->save();
 

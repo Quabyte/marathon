@@ -17,20 +17,18 @@ class ShoppingCartController extends Controller
     	return view('components.cart', compact('cartQty'));
     }
 
-    public function destroy()
+    public function destroy(Request $request)
     {
     	Cart::destroy();
 
     	session()->forget('attendeeQty');
 
-        $order = Order::where('reference', '=', session('orderRef'))->firstOrFail();
+        $order = Order::where('reference', '=', $request->cookie('orderRef'))->firstOrFail();
         $order->status = 'cancelled';
         $order->updated_at = Carbon::now('Europe/Istanbul');
         $order->save();
 
-        session()->forget('orderRef');
-
-    	return redirect()->to('/');
+    	return redirect()->to('/')->withCookie(cookie()->forget('orderRef'));
     }
 
     public function payment()
