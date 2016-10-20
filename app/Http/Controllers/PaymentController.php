@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use Carbon\Carbon;
 use App\Http\Requests;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -45,7 +47,7 @@ class PaymentController extends Controller
 		];
 
 		$client = new Client();
-		$response = $client->request('POST', 'https://entegrasyon.asseco-see.com.tr/fim/est3Dgate', ['form_params' => $odeme]);
+		$response = $client->request('POST', 'https://entegrasyon.asseco-see.com.tr/fim/est3Dgate', ['form_params' => $payment]);
     }
 
     public function confirm()
