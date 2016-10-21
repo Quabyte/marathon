@@ -41,7 +41,7 @@
 										<select class="form-control" name="checkIn">
 											<option value="">CheckIn</option>
 											<option value="10">Nov 10</option>
-											<option value="">Nov 11</option>
+											<option value="11">Nov 11</option>
 										</select>
 									</div>
 									<div class="col-md-3">
