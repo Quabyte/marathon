@@ -47,10 +47,9 @@ class MarathonsController extends Controller
             $orderItem->title = $marathon->name;
             $orderItem->price = $marathon->price * $attendees1;
             $orderItem->order_id = $order->id;
-            $orderItem->created_at = Carbon::now('Europe/Istanbul');
+
             $orderItem->save();
 
-            $order->updated_at = Carbon::now('Europe/Istanbul');
             $order->save();
         }
         if ($attendees2 > 0) {
@@ -62,10 +61,10 @@ class MarathonsController extends Controller
             $orderItem->title = $marathon->name;
             $orderItem->price = $marathon->price * $attendees2;
             $orderItem->order_id = $order->id;
-            $orderItem->created_at = Carbon::now('Europe/Istanbul');
+            
             $orderItem->save();
 
-            $order->updated_at = Carbon::now('Europe/Istanbul');
+        
             $order->save();
         }
         if ($attendees3 > 0) {
@@ -77,10 +76,10 @@ class MarathonsController extends Controller
             $orderItem->title = $marathon->name;
             $orderItem->price = $marathon->price * $attendees3;
             $orderItem->order_id = $order->id;
-            $orderItem->created_at = Carbon::now('Europe/Istanbul');
+            
             $orderItem->save();
 
-            $order->updated_at = Carbon::now('Europe/Istanbul');
+        
             $order->save();
         }
 
