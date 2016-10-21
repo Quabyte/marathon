@@ -36,56 +36,56 @@ class MarathonsController extends Controller
             session(['attendeeQty' => $totalAttendees]);
         }
 
-        $order = Order::where('reference', '=', $request->cookie('orderRef'))->firstOrFail();
+        // $order = Order::where('reference', '=', $request->cookie('orderRef'))->firstOrFail();
 
         if ($attendees1 > 0) {
             $marathon = Marathon::findOrFail(1);
             $cartItem = Cart::add($marathon->id, $marathon->name, $attendees1, $marathon->price);
             $cartItem->associate('App\Marathon');
 
-            $orderItem = new OrderItem;
-            $orderItem->title = $marathon->name;
-            $orderItem->price = $marathon->price * $attendees1;
-            $orderItem->order_id = $order->id;
+            // $orderItem = new OrderItem;
+            // $orderItem->title = $marathon->name;
+            // $orderItem->price = $marathon->price * $attendees1;
+            // $orderItem->order_id = $order->id;
 
-            $orderItem->save();
+            // $orderItem->save();
 
-            $order->save();
+            // $order->save();
         }
         if ($attendees2 > 0) {
             $marathon = Marathon::findOrFail(2);
             $cartItem = Cart::add($marathon->id, $marathon->name, $attendees2, $marathon->price);
             $cartItem->associate('App\Marathon');
 
-            $orderItem = new OrderItem;
-            $orderItem->title = $marathon->name;
-            $orderItem->price = $marathon->price * $attendees2;
-            $orderItem->order_id = $order->id;
+            // $orderItem = new OrderItem;
+            // $orderItem->title = $marathon->name;
+            // $orderItem->price = $marathon->price * $attendees2;
+            // $orderItem->order_id = $order->id;
             
-            $orderItem->save();
+            // $orderItem->save();
 
         
-            $order->save();
+            // $order->save();
         }
         if ($attendees3 > 0) {
             $marathon = Marathon::findOrFail(3);
             $cartItem = Cart::add($marathon->id, $marathon->name, $attendees3, $marathon->price);
             $cartItem->associate('App\Marathon');
 
-            $orderItem = new OrderItem;
-            $orderItem->title = $marathon->name;
-            $orderItem->price = $marathon->price * $attendees3;
-            $orderItem->order_id = $order->id;
+            // $orderItem = new OrderItem;
+            // $orderItem->title = $marathon->name;
+            // $orderItem->price = $marathon->price * $attendees3;
+            // $orderItem->order_id = $order->id;
             
-            $orderItem->save();
+            // $orderItem->save();
 
         
-            $order->save();
+            // $order->save();
         }
 
-        $order = Order::where('reference', '=', $request->cookie('orderRef'))->firstOrFail();
-        $order->total = Cart::total();
-        $order->save();
+        // $order = Order::where('reference', '=', $request->cookie('orderRef'))->firstOrFail();
+        // $order->total = Cart::total();
+        // $order->save();
 
         return redirect()->to('/cart');
     }
