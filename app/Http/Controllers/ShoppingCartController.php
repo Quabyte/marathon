@@ -23,17 +23,20 @@ class ShoppingCartController extends Controller
 
     	session()->forget('attendeeQty');
 
-        $order = Order::where('reference', '=', $request->cookie('orderRef'))->firstOrFail();
+        $order = Order::where('reference', '=', session('orderRef'))->firstOrFail();
         $order->status = 'cancelled';
         $order->updated_at = Carbon::now('Europe/Istanbul');
         $order->save();
 
-    	return redirect()->to('/')->withCookie(cookie()->forget('orderRef'));
+        session()->forget('orderRef');
+
+    	return redirect()->to('/');
     }
 
     public function payment()
     {
         $extras = Extra::all();
+
     	return view('components.payment', compact('extras'));
     }
 }

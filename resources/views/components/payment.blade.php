@@ -13,7 +13,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
-			@include('components.creditCard')
+			@include('components.newCreditCard')
 		</div>
 		<div class="col-md-3">
 			<div class="alert alert-alt alert-primary alert-dismissible" role="alert">
