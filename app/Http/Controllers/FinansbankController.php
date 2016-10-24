@@ -197,74 +197,63 @@ class FinansbankController extends Controller
        	}
 
        	$Response ="";
- $OrderId ="";
- $AuthCode  ="";
- $ProcReturnCode    ="";
- $ErrMsg  ="";
- $HOSTMSG  ="";
- $HostRefNum = "";
- $TransId="";
+	 	$OrderId ="";
+	 	$AuthCode  ="";
+	 	$ProcReturnCode    ="";
+	 	$ErrMsg  ="";
+	 	$HOSTMSG  ="";
+	 	$HostRefNum = "";
+	 	$TransId="";
 
-$response_tag="Response";
-$posf = strpos (  $result, ("<" . $response_tag . ">") );
-$posl = strpos (  $result, ("</" . $response_tag . ">") ) ;
-$posf = $posf+ strlen($response_tag) +2 ;
-$Response = substr (  $result, $posf, $posl - $posf) ;
+		$response_tag="Response";
+		$posf = strpos (  $result, ("<" . $response_tag . ">") );
+		$posl = strpos (  $result, ("</" . $response_tag . ">") ) ;
+		$posf = $posf+ strlen($response_tag) +2 ;
+		$Response = substr (  $result, $posf, $posl - $posf) ;
 
-$response_tag="OrderId";
-$posf = strpos (  $result, ("<" . $response_tag . ">") );
-$posl = strpos (  $result, ("</" . $response_tag . ">") ) ;
-$posf = $posf+ strlen($response_tag) +2 ;
-$OrderId = substr (  $result, $posf , $posl - $posf   ) ;
+		$response_tag="OrderId";
+		$posf = strpos (  $result, ("<" . $response_tag . ">") );
+		$posl = strpos (  $result, ("</" . $response_tag . ">") ) ;
+		$posf = $posf+ strlen($response_tag) +2 ;
+		$OrderId = substr (  $result, $posf , $posl - $posf   ) ;
 
-$response_tag="AuthCode";
-$posf = strpos (  $result, "<" . $response_tag . ">" );
-$posl = strpos (  $result, "</" . $response_tag . ">" ) ;
-$posf = $posf+ strlen($response_tag) +2 ;
-$AuthCode = substr (  $result, $posf , $posl - $posf   ) ;
+		$response_tag="AuthCode";
+		$posf = strpos (  $result, "<" . $response_tag . ">" );
+		$posl = strpos (  $result, "</" . $response_tag . ">" ) ;
+		$posf = $posf+ strlen($response_tag) +2 ;
+		$AuthCode = substr (  $result, $posf , $posl - $posf   ) ;
 
-$response_tag="ProcReturnCode";
-$posf = strpos (  $result, "<" . $response_tag . ">" );
-$posl = strpos (  $result, "</" . $response_tag . ">" ) ;
-$posf = $posf+ strlen($response_tag) +2 ;
-$ProcReturnCode = substr (  $result, $posf , $posl - $posf   ) ;
+		$response_tag="ProcReturnCode";
+		$posf = strpos (  $result, "<" . $response_tag . ">" );
+		$posl = strpos (  $result, "</" . $response_tag . ">" ) ;
+		$posf = $posf+ strlen($response_tag) +2 ;
+		$ProcReturnCode = substr (  $result, $posf , $posl - $posf   ) ;
 
-$response_tag="ErrMsg";
-$posf = strpos (  $result, "<" . $response_tag . ">" );
-$posl = strpos (  $result, "</" . $response_tag . ">" ) ;
-$posf = $posf+ strlen($response_tag) +2 ;
-$ErrMsg = substr (  $result, $posf , $posl - $posf   ) ;
+		$response_tag="ErrMsg";
+		$posf = strpos (  $result, "<" . $response_tag . ">" );
+		$posl = strpos (  $result, "</" . $response_tag . ">" ) ;
+		$posf = $posf+ strlen($response_tag) +2 ;
+		$ErrMsg = substr (  $result, $posf , $posl - $posf   ) ;
 
-$response_tag="HostRefNum";
-$posf = strpos (  $result, "<" . $response_tag . ">" );
-$posl = strpos (  $result, "</" . $response_tag . ">" ) ;
-$posf = $posf+ strlen($response_tag) +2 ;
-$HostRefNum = substr (  $result, $posf , $posl - $posf   ) ;
+		$response_tag="HostRefNum";
+		$posf = strpos (  $result, "<" . $response_tag . ">" );
+		$posl = strpos (  $result, "</" . $response_tag . ">" ) ;
+		$posf = $posf+ strlen($response_tag) +2 ;
+		$HostRefNum = substr (  $result, $posf , $posl - $posf   ) ;
 
-$response_tag="TransId";
-$posf = strpos (  $result, "<" . $response_tag . ">" );
-$posl = strpos (  $result, "</" . $response_tag . ">" ) ;
-$posf = $posf+ strlen($response_tag) +2 ;
-$$TransId = substr (  $result, $posf , $posl - $posf   ) ;
+		$response_tag="TransId";
+		$posf = strpos (  $result, "<" . $response_tag . ">" );
+		$posl = strpos (  $result, "</" . $response_tag . ">" ) ;
+		$posf = $posf+ strlen($response_tag) +2 ;
+		$$TransId = substr (  $result, $posf , $posl - $posf   ) ;
 
-if ( $Response === "Approved")
-{
-
-	  echo "Ödeme isleminiz basariyla gerçeklestirildi";
-  
-
-
-
-}
-else
-{
-         echo "Ödeme isleminiz basariyla gerçeklestirilmedi.Hata=".$ErrMsg;
-    
-}
-
-}
-else{
-	echo "3D islemi onay almadi";
-}
+		if ( $Response === "Approved")
+		{
+	  		echo "Ödeme isleminiz basariyla gerçeklestirildi";
+  		}
+		else
+		{
+	        echo "Ödeme isleminiz basariyla gerçeklestirilmedi.Hata=".$ErrMsg;
+		}
     }
 }
