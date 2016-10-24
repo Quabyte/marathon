@@ -36,7 +36,16 @@ class ShoppingCartController extends Controller
     public function payment()
     {
         $extras = Extra::all();
+        $order = Order::where('reference', '=', session('orderRef'))->firstOrFail();
+        $reference = $order->reference;
+        $total = $order->total;
+        $rnd = microtime();
+        $storekey = "123456";
 
-    	return view('components.payment', compact('extras'));
+        $hashstr = "600100000" . $reference . $total . "http://marathon.dev/handle3D" . "http://marathon.dev/handle3D" . $rnd  . $storekey;
+
+        $hash = base64_encode(pack('H*',sha1($hashstr)));
+
+    	return view('components.payment', compact('extras', 'reference', 'total', 'rnd', 'hash'));
     }
 }

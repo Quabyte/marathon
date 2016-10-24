@@ -1,5 +1,5 @@
 <div class="col-md-12">
-	<form action="{{ action('FinansbankController@prepare') }}" method="POST">
+	{{-- <form method="post" action="https://entegrasyon.asseco-see.com.tr/fim/est3Dgate">
 		{{ csrf_field() }}
 		<div class="form-group">
 			<label for="pan">Credit Card Number</label>
@@ -65,8 +65,71 @@
 			</div>
 		</div>
 
+		<input type="hidden" name="clientid" value="600100000">
+		<input type="hidden" name="oid" value="{{ $reference }}">
+		<input type="hidden" name="amount" value="{{ $total }}">
+		<input type="hidden" name="okUrl" value="http://marathon.dev/handle3D">
+		<input type="hidden" name="failUrl" value="http://marathon.dev/handle3D">
+		<input type="hidden" name="storetype" value="3d">
+		<input type="hidden" name="rnd" value="{{ $rnd }}">
+		<input type="hidden" name="hash" value="{{ $hash }}">
+
 		<div class="col-md-6 col-md-offset-3">
 			<button type="submit" class="btn btn-success btn-block" style="margin-bottom: 30px;">Pay Now</button>
 		</div>
-	</form>
+	</form> --}}
+
+	<form method="post" action="https://entegrasyon.asseco-see.com.tr/fim/est3Dgate">
+		{{ csrf_field() }}
+                <table>
+                    <tr>
+                        <td>Kredi Kart Numarasi:</td>
+                        <td><input type="text" name="pan" size="20"/>
+                    </tr>
+                    
+                    <tr>
+                        <td>Güvenlik Kodu:</td>
+                        <td><input type="text" name="cv2" size="4" value=""/></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Son Kullanma Yili:</td>
+                        <td><input type="text" name="Ecom_Payment_Card_ExpDate_Year" value=""/></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Son Kullanma Ayi:</td>
+                        <td><input type="text" name="Ecom_Payment_Card_ExpDate_Month" value=""/></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Visa/MC secimi</td>
+                        <td><select name="cardType">
+                            <option value="1">Visa</option>
+                            <option value="2">MasterCard</option>
+                        </select>
+                    </tr>
+                    
+                    <tr>
+                        <td align="center" colspan="2">
+                            <input type="submit" value="Ödemeyi Tamamla"/>
+                        </td>
+                    </tr>
+                    
+                </table>
+                <input type="hidden" name="clientid" value="600100000">
+        
+                <input type="hidden" name="amount" value="{!! $total !!}">
+                <input type="hidden" name="oid" value="{!! $reference !!}">    
+                <input type="hidden" name="okUrl" value="http://marathon.dev/handle3D">
+                <input type="hidden" name="failUrl" value="http://marathon.dev/handle3D">
+                <input type="hidden" name="rnd" value="{!! $rnd !!}" >
+                <input type="hidden" name="hash" value="{!! $hash !!}" >
+                
+                <input type="hidden" name="storetype" value="3d" >      
+                <input type="hidden" name="lang" value="tr">
+                <input type="hidden" name="currency" value="949">
+                
+               
+            </form>
 </div>
