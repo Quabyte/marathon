@@ -44,7 +44,7 @@ class FinansbankController extends Controller
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,2);
 		curl_setopt($ch, CURLOPT_SSLVERSION, 3);
 		
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,0);
+		// curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,0);
 		
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER,1); 
 		curl_setopt($ch, CURLOPT_TIMEOUT, 90); 
@@ -183,7 +183,7 @@ class FinansbankController extends Controller
 			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,2);
 			curl_setopt($ch, CURLOPT_SSLVERSION, 3);
 			
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,0);
+			// curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,0);
 			
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER,1); 
 			curl_setopt($ch, CURLOPT_TIMEOUT, 90); 
