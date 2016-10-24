@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Request as Requestor;
 
 class FinansbankController extends Controller
 {
-	private $userForm;
+	public $userForm;
 
     public function prepare(Request $request)
     {
