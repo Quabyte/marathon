@@ -41,7 +41,7 @@ class FinansbankController extends Controller
 
     	$url = 'https://entegrasyon.asseco-see.com.tr/fim/est3Dgate';
     	curl_setopt($ch, CURLOPT_URL,$url); 
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,1);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,false);
 		curl_setopt($ch, CURLOPT_SSLVERSION, 3);
 		
 		// curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,0);
