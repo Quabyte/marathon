@@ -33,7 +33,7 @@ class FinansbankController extends Controller
 
     	$hashStr = $this->userForm['clientid'] . $this->userForm['oid'] . $this->userForm['amount'] . $this->userForm['okUrl'] . $this->userForm['failUrl'] . $this->userForm['rnd'] . $storeKey;
 
-    	$hash = base64_encode(pack('H*',sha1($hashstr)));
+    	$hash = base64_encode(pack('H*',sha1($hashStr)));
 
     	$this->userForm['hash'] = $hash;
 
