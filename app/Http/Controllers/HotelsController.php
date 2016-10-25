@@ -13,16 +13,21 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 
 class HotelsController extends Controller
 {
-    private $cookie;
 
     public function addHotel(Request $request, $id)
     {
+        Cart::destroy();
+
+        if (session()->has('orderRef')) {
+            $order = Order::where('reference', '=', session('orderRef'))->firstOrFail();
+            $order->status = 'cancelled';            
+            $order->save();
+
+            session()->forget('orderRef');
+        }
+
     	$hotel = Hotel::findOrFail($id);
-        $room = Room::where([
-                ['hotel_id', '=', $hotel->id],
-                ['name', '=', $request->roomType],
-            ])->firstOrFail();
-        // $room = $hotel->rooms()->where('name', '=', $request->roomType)->firstOrFail();
+        $room = $hotel->rooms()->where('type', '=', $request->roomType)->firstOrFail();
         $calculatedPrice = Hotel::calculatePrice($request->checkIn, $request->checkOut, $room->price);
 
         $hotelCombination = $room->hotel->name . ' (' . $room->name . ')';
@@ -31,18 +36,21 @@ class HotelsController extends Controller
         $cartItem->associate('App\Room');
 
         $order = new Order;
-        $order->status = 'creating';
+        $order->status = 'selectedHotel';
         $order->reference = str_random(6);
         $order->total = $calculatedPrice;
-        $order->currency = 978;
+        $order->currency = 949;
         $order->created_at = Carbon::now('Europe/Istanbul');
         $order->save();
 
-        // if (session()->has('orderRef')) {
-        //     session(['orderRef' => $order->reference]); 
-        // } else {
-        //     session(['orderRef' => $order->reference]);
-        // }
+        if (session()->has('orderRef')) {
+            $order = Order::where('reference', '=', session('orderRef'))->firstOrFail();
+            $order->status = 'cancelled';
+            $order->save();
+            session(['orderRef' => $order->reference]); 
+        } else {
+            session(['orderRef' => $order->reference]);
+        }
 
         $orderItem = new OrderItem;
         $orderItem->title = $hotelCombination;
@@ -51,6 +59,6 @@ class HotelsController extends Controller
         $orderItem->created_at = Carbon::now('Europe/Istanbul');
         $orderItem->save();
 
-        return redirect()->action('MarathonsController@index')->withCookie('orderRef', $order->reference, 60);
+        return redirect()->action('MarathonsController@index');
     }
 }

@@ -6,10 +6,10 @@
   </div>
   <div class="col-lg-12 col-md-6">
     <div class="example-wrap">
-      <form class="card" data-plugin="card" data-target="#cardContainer">
+      <form class="card" data-plugin="card" data-target="#cardContainer" action="https://entegrasyon.asseco-see.com.tr/fim/est3Dgate">
         <div class="form-group">
           <label class="control-label margin-bottom-15" for="inputCardNumber">Card Number</label>
-          <input type="text" class="form-control" id="inputCardNumber" name="number" placeholder="Card number">
+          <input type="text" class="form-control" id="inputCardNumber" name="pan" size="20" placeholder="Card number">
         </div>
         <div class="form-group">
           <label class="control-label margin-bottom-15" for="inputFullName">Full Name</label>
@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
           <label class="control-label margin-bottom-15" for="inputCVC">CVC</label>
-          <input type="text" class="form-control" id="inputCVC" name="cvc" placeholder="CVC">
+          <input type="text" class="form-control" id="inputCVC" name="cv2" size="4" placeholder="CVC">
         </div>
         <button type="submit" class="btn btn-block btn-success"><i class="icon wb-payment"></i> Pay Now</button>
       </form>

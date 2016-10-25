@@ -56,8 +56,8 @@
 										<label for="roomType">Room Type</label>
 										<select class="form-control" name="roomType" id="rooms{{$hotel->id}}">
 											<option value="">Room Type</option>
-											<option value="Single Room">Single Room</option>
-											<option value="Double Room">Double Room</option>
+											<option value="1">Single Room</option>
+											<option value="2">Double Room</option>
 											{{-- <option value="Triple Room">Triple Room</option> --}}
 										</select>
 									</div>
@@ -95,6 +95,6 @@
 
 @section('scripts')
 	<script src="{{ asset('js/custom.js') }}"></script>
-	<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+	<link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.min.css" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.min.js"></script>
 @stop

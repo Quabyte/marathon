@@ -20,7 +20,7 @@
         <!-- FONTS -->
         <link rel="stylesheet" type="text/css" href="{{ asset('fonts/web-icons/web-icons.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('fonts/font-awesome/font-awesome.min.css') }}">
-        <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
 
         <!-- SCRIPTS -->
         <script src="{{ asset('js/modernizr.min.js') }}"></script>
