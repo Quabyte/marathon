@@ -71,8 +71,8 @@
     
             <input type="hidden" name="amount" value="{!! $total !!}">
             <input type="hidden" name="oid" value="{!! $reference !!}">    
-            <input type="hidden" name="okUrl" value="http://marathon.dev/handle3D">
-            <input type="hidden" name="failUrl" value="http://marathon.dev/handle3D">
+            <input type="hidden" name="okUrl" value="https://istanbulmarathon.co/handle3D">
+            <input type="hidden" name="failUrl" value="https://istanbulmarathon.co/handle3D">
             <input type="hidden" name="rnd" value="{!! $rnd !!}" >
             <input type="hidden" name="hash" value="{!! $hash !!}" >
             
