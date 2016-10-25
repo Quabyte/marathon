@@ -21,5 +21,4 @@ Route::post('/add-attendees', 'AttendeesController@create');
 Route::get('/payment', 'ShoppingCartController@payment');
 Route::post('/addExtra/{id}', 'ApplicationController@addExtra');
 
-Route::post('/prepare', 'FinansbankController@prepare');
 Route::post('/handle3D', 'FinansbankController@handle3D');

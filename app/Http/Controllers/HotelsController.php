@@ -19,7 +19,7 @@ class HotelsController extends Controller
         Cart::destroy();
 
         if (session()->has('orderRef')) {
-            $order = Order::where('reference', '=', session('orderRef'));
+            $order = Order::where('reference', '=', session('orderRef'))->firstOrFail();
             $order->status = 'cancelled';            
             $order->save();
 
