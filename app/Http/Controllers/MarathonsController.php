@@ -32,11 +32,9 @@ class MarathonsController extends Controller
         $totalAttendees = $attendees1 + $attendees2 + $attendees3;
 
         if (session()->has('attendeeQty')) {
-            $previous = session('attendeeQty');
+            session()->forget('attendeeQty');
 
-            $total = $previous + $totalAttendees;
-
-            session(['attendeeQty' => $total]);
+            session(['attendeeQty' => $totalAttendees]);
         } else {
             session(['attendeeQty' => $totalAttendees]);
         }

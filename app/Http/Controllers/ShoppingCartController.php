@@ -36,13 +36,16 @@ class ShoppingCartController extends Controller
     public function payment()
     {
         $extras = Extra::all();
-        $order = Order::where('reference', '=', session('orderRef'))->firstOrFail();
+        $order = Order::where('reference', '=', session('orderRef'))->first();
+        if (!isset($order)) {
+            return redirect()->to('/');
+        }
         $reference = $order->reference;
         $total = $order->total;
         $rnd = microtime();
         $storekey = "123456";
 
-        $hashstr = "600100000" . $reference . $total . "https://test.trewout.com/handle3D" . "https://test.trewout.com/handle3D" . $rnd  . $storekey;
+        $hashstr = "600100000" . $reference . $total . "http://marathon.dev/handle3D" . "http://marathon.dev/handle3D" . $rnd  . $storekey;
 
         $hash = base64_encode(pack('H*',sha1($hashstr)));
 

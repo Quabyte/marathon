@@ -39,7 +39,7 @@ class HotelsController extends Controller
         $order->status = 'selectedHotel';
         $order->reference = str_random(6);
         $order->total = $calculatedPrice;
-        $order->currency = 978;
+        $order->currency = 949;
         $order->created_at = Carbon::now('Europe/Istanbul');
         $order->save();
 

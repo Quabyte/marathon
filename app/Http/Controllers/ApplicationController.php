@@ -19,6 +19,12 @@ class ApplicationController extends Controller
     {
     	$hotels = Hotel::all();
 
+        Cart::destroy();
+
+        if (session()->has('orderRef')) {
+            session()->forget('orderRef');
+        }
+
     	return view('hotels', compact('hotels'));
     }
 
