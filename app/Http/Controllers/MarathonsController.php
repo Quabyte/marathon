@@ -48,6 +48,7 @@ class MarathonsController extends Controller
 
             $orderItem = new OrderItem;
             $orderItem->title = $marathon->name;
+            $orderItem->quantity = $attendees1;
             $orderItem->unitPrice = $marathon->price;
             $orderItem->subtotal = $marathon->price * $attendees1;
             $orderItem->created_at = Carbon::now('Europe/Istanbul');
@@ -65,6 +66,7 @@ class MarathonsController extends Controller
 
             $orderItem = new OrderItem;
             $orderItem->title = $marathon->name;
+            $orderItem->quantity = $attendees2;
             $orderItem->unitPrice = $marathon->price;
             $orderItem->subtotal = $marathon->price * $attendees2;
             $orderItem->created_at = Carbon::now('Europe/Istanbul');
@@ -83,6 +85,7 @@ class MarathonsController extends Controller
 
             $orderItem = new OrderItem;
             $orderItem->title = $marathon->name;
+            $orderItem->quantity = $attendees3;
             $orderItem->unitPrice = $marathon->price;
             $orderItem->subtotal = $marathon->price * $attendees3;
             $orderItem->created_at = Carbon::now('Europe/Istanbul');
