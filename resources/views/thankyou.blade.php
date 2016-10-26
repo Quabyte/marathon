@@ -55,7 +55,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						@foreach ($order->items() as $orderItem)
+						@foreach ($order->orderItems() as $orderItem)
 							<tr>
 								<td>{{ $orderItem->title }}</td>
 								<td class="text-center">{{ $orderItem->quantity }}</td>

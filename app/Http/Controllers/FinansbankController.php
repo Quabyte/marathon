@@ -249,7 +249,7 @@ $$TransId = substr (  $result, $posf , $posl - $posf   ) ;
 
 			if ( $Response === "Approved")
 			{
-				$order = Order::where('reference', '=', $_POST['oid'])->first();
+				$order = Order::where('reference', '=', $_POST['oid'])->firstOrFail();
 
 		  		return redirect()->action('FinansbankController@thankYou', ['orderRef' => $order->reference]);
 	  		}
