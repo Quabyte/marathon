@@ -26,7 +26,9 @@ class OrderShipped extends Mailable
     {
         $this->order = Order::where('reference', '=', $orderRef)->firstOrFail();
 
-        $this->user = User::find($this->order->user_id);
+        $user = $this->order->user_id;
+
+        $this->user = User::findOrFail($user);
     }
 
     /**
