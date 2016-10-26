@@ -7,7 +7,9 @@ use App\Order;
 use Carbon\Carbon;
 use App\Http\Requests;
 use GuzzleHttp\Client;
+use App\Mail\OrderShipped;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Request as Requestor;
 
@@ -264,6 +266,7 @@ $$TransId = substr (  $result, $posf , $posl - $posf   ) ;
     	$order->status = 'confirmed';
     	$user = User::find($order->user_id);
     	$time = Carbon::now('Europe/Istanbul');
+    	Mail::to($user->email)->send(new OrderShipped($order));
     	session()->forget('orderRef');
     	return view('thankyou', compact('order', 'time', 'user'));
     }

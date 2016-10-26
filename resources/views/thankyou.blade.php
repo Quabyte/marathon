@@ -35,13 +35,7 @@
 					</address>
 				</div>
 
-				<div class="col-md-4 text-center">
-					<h4>
-						<img src="{{ asset('images/logo.jpg') }}">
-					</h4>
-				</div>
-
-				<div class="col-md-4 text-right">
+				<div class="col-md-4 col-md-offset-4 text-right">
 					<h4>Invoice Info</h4>
 					<a class="font-size-26" href="javascript:void(0)">#{{ $order->reference }}</a><br>
 					To:
@@ -61,12 +55,12 @@
 						</tr>
 					</thead>
 					<tbody>
-						@foreach (Cart::content() as $row)
+						@foreach ($order->items() as $orderItem)
 							<tr>
-								<td>{{ $row->name }}</td>
-								<td class="text-center">{{ $row->qty }}</td>
-								<td class="text-right">{{ $row->price }}€</td>
-								<td class="text-right">{{ $row->total }}€</td>
+								<td>{{ $orderItem->title }}</td>
+								<td class="text-center">{{ $orderItem->quantity }}</td>
+								<td class="text-right">{{ $orderItem->unitPrice }}€</td>
+								<td class="text-right">{{ $orderItem->subtotal }}€</td>
 							</tr>							
 						@endforeach
 					</tbody>					
@@ -76,7 +70,7 @@
 			<div class="row">
 				<div class="text-right clearfix">
 					<div class="pull-right">
-						<p class="page-invoice-amount">TOTAL: <span>{{ Cart::total() }}€</span></p>
+						<p class="page-invoice-amount">TOTAL: <span>{{ $order->total }}€</span></p>
 					</div>
 				</div>
 			</div>

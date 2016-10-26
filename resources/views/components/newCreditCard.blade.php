@@ -1,22 +1,16 @@
-<div class="col-md-12">
+<div class="col-md-8 col-md-offset-2" style="padding:15px 25px; background: #eee; border-radius: 5px; border: 1px solid #e1e1e1;">
 	<form method="post" action="https://entegrasyon.asseco-see.com.tr/fim/est3Dgate">
 			{{ csrf_field() }}
 			<div class="row">
-				<div class="col-md-8">
+				<div class="col-md-12">
 					<div class="form-group">
                         <label for="pan">Credit Card Number</label>
                         <input type="text" name="pan" size="20" class="form-control"/>
                 	</div>
 				</div>
-				<div class="col-md-4">
-					<div class="form-group">
-                        <label for="cv2">Security Code</label>
-	                    <input type="password" name="cv2" size="4" value="" class="form-control"/>
-					</div>
-				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<div class="form-group">
                         <label for="Ecom_Payment_Card_ExpDate_Year">Expiry Year</label>
                         <select name="Ecom_Payment_Card_ExpDate_Year" class="form-control">
@@ -33,7 +27,7 @@
                         </select>
 					</div>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<div class="form-group">
 	                    <label for="Ecom_Payment_Card_ExpDate_Month">Expiry Month</label>
 	                    <select name="Ecom_Payment_Card_ExpDate_Month" class="form-control">
@@ -52,7 +46,9 @@
 	                    </select>
 					</div>
 				</div>
-				<div class="col-md-4">
+			</div>
+			<div class="row">
+				<div class="col-md-6">
 					<div class="form-group">
 						<label for="cardType">Payment Method</label>
                         <select name="cardType" class="form-control">
@@ -61,15 +57,23 @@
                         </select>
 					</div>
 				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+                        <label for="cv2">Security Code</label>
+	                    <input type="password" name="cv2" size="4" value="" class="form-control"/>
+					</div>
+				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6 col-md-offset-3">
-                    <input type="submit" value="Pay Now" class="btn btn-block btn-danger" />
-                    <div class="text-center">
+				<div class="col-md-6">
+					<div>
                     	<i class="icon fa-cc-mastercard" style="font-size: 32px;"></i>
 				    	<i class="icon fa-cc-visa" style="font-size: 32px;"></i>
 				    	<i class="icon fa-cc-amex" style="font-size: 32px;"></i>
                     </div>
+				</div>
+				<div class="col-md-6">
+                    <input type="submit" value="Pay Now" class="btn btn-block btn-danger" style="margin-top: 10px;" />
 				</div>
 			</div>
             <input type="hidden" name="clientid" value="600100000">

@@ -42,7 +42,7 @@ class ShoppingCartController extends Controller
             return redirect()->to('/');
         }
         $reference = $order->reference;
-        $total = $order->total;
+        $total = $order->total * 3.36;
         $rnd = microtime();
         $storekey = "123456";
 

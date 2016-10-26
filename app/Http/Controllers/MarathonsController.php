@@ -89,6 +89,7 @@ class MarathonsController extends Controller
         $order = Order::where('reference', '=', session('orderRef'))->firstOrFail();
         $order->status = 'selectedMarathon';
         $order->total = Cart::total();
+        $order->updated_at = Carbon::now('Europe/Istanbul');
         $order->save();
 
         return redirect()->to('/cart');
