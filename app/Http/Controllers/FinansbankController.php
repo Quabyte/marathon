@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Order;
 use Carbon\Carbon;
 use App\Http\Requests;
@@ -265,6 +266,5 @@ $$TransId = substr (  $result, $posf , $posl - $posf   ) ;
     	$time = Carbon::now('Europe/Istanbul');
     	session()->forget('orderRef');
     	return view('thankyou', compact('order', 'time', 'user'));
-    	Cart::destroy();
     }
 }

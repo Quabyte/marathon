@@ -27,7 +27,8 @@
 						<img src="{{ asset('images/detur_logo.png') }}" class="margin-right-10">
 					</h4>
 					<address>
-						Büyükdere Cad. Özsezen İş Merkezi C Blok Asmakat Detur <br>
+						Büyükdere Cad. Özsezen İş Merkezi<br>
+						C Blok Esentepe 34394 İSTANBUL/TÜRKİYE<br> 
 						<abbr title="Mail">Email:</abbr> info@detur.com <br>
 						<abbr title="Phone">Phone:</abbr> +90 212 217 77 60 <br>
 						<abbr title="Fax">Fax:</abbr> +90 212 217 77 40
