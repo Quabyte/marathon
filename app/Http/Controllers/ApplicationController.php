@@ -25,6 +25,10 @@ class ApplicationController extends Controller
             session()->forget('orderRef');
         }
 
+        if (session()->has('attendeeQty')) {
+            session()->forget('attendeeQty');
+        }
+
     	return view('hotels', compact('hotels'));
     }
 
