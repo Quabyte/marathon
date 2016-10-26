@@ -264,7 +264,8 @@ $$TransId = substr (  $result, $posf , $posl - $posf   ) ;
     {
     	$order = Order::where('reference', '=', $orderRef)->firstOrFail();
     	$order->status = 'confirmed';
-    	$user = User::find($order->user_id);
+    	$userID = $order->user_id;
+    	$user = User::findOrFail($userID);
     	$time = Carbon::now('Europe/Istanbul');
     	// Mail::to($user->email)->send(new OrderShipped($order));
     	session()->forget('orderRef');
