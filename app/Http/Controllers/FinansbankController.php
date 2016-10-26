@@ -265,12 +265,14 @@ $$TransId = substr (  $result, $posf , $posl - $posf   ) ;
     {
     	$order = Order::where('reference', '=', $orderRef)->firstOrFail();
     	$order->status = 'confirmed';
+    	$order->updated_at = Carbon::now('Europe/Istanbul');
     	$userID = $order->user_id;
     	$orderItems = OrderItem::where('order_id', '=', $order->id)->get();
     	$user = User::findOrFail($userID);
     	$time = Carbon::now('Europe/Istanbul');
     	// Mail::to($user->email)->send(new OrderShipped($order));
     	session()->forget('orderRef');
+    	$order->save();
     	return view('thankyou', compact('order', 'time', 'user', 'orderItems'));
     }
 }
