@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Order;
+use App\OrderItem;
 use Carbon\Carbon;
 use App\Http\Requests;
 use GuzzleHttp\Client;
