@@ -20,7 +20,7 @@ class Hotel extends Model
     	return $this->hasMany('App\Room');
     }
 
-    public static function calculatePrice($checkIn, $checkOut, $price, $quantity)
+    public static function calculatePrice($checkIn, $checkOut, $price)
     {
         $total = ($checkOut - $checkIn) * $price;
 
