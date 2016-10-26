@@ -260,9 +260,11 @@ $$TransId = substr (  $result, $posf , $posl - $posf   ) ;
     public function thankYou($orderRef)
     {
     	$order = Order::where('reference', '=', $orderRef)->firstOrFail();
+    	$order->status = 'confirmed';
+    	$user = User::find($order->user_id);
     	$time = Carbon::now('Europe/Istanbul');
-    	Cart::destroy();
     	session()->forget('orderRef');
-    	return view('thankyou', compact('order', 'time'));
+    	return view('thankyou', compact('order', 'time', 'user'));
+    	Cart::destroy();
     }
 }

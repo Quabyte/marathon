@@ -84,6 +84,7 @@
             <input type="hidden" name="storetype" value="3d" >      
             <input type="hidden" name="lang" value="tr">
             <input type="hidden" name="currency" value="949">
+            <input type="hidden" name="email" value="{{ $email }}">
     </form>
     <div class="col-md-3 col-md-offset-6">
     </div>

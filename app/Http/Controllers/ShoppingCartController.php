@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Extra;
 use App\Order;
 use Carbon\Carbon;
@@ -49,6 +50,8 @@ class ShoppingCartController extends Controller
 
         $hash = base64_encode(pack('H*',sha1($hashstr)));
 
-    	return view('components.payment', compact('extras', 'reference', 'total', 'rnd', 'hash'));
+        $email = User::find($order->user_id);
+
+    	return view('components.payment', compact('extras', 'reference', 'total', 'rnd', 'hash', 'email'));
     }
 }

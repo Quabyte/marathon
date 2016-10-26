@@ -11,5 +11,10 @@
 				<img src="{{ asset('images/logo.jpg') }}">
 			</a>
 		</div>
+		<ul class="nav navbar-nav navbar-right">
+			<a class="navbar-brand" href="{{ url('/') }}">
+				<img src="{{ asset('images/detur_logo.png') }}" style="margin-top: 7px;">
+			</a>
+		</ul>
 	</div>
 </nav>
