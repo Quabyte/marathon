@@ -43,9 +43,9 @@ class ShoppingCartController extends Controller
         $reference = $order->reference;
         $total = $order->total;
         $rnd = microtime();
-        $storekey = "123456";
+        $storekey = "V1117211";
 
-        $hashstr = "600100000" . $reference . $total . "https://istanbulmarathon.co/handle3D" . "https://istanbulmarathon.co/handle3D" . $rnd  . $storekey;
+        $hashstr = "094100000012005" . $reference . $total . "https://istanbulmarathon.co/handle3D" . "https://istanbulmarathon.co/handle3D" . $rnd  . $storekey;
 
         $hash = base64_encode(pack('H*',sha1($hashstr)));
 

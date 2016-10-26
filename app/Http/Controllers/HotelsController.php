@@ -30,7 +30,7 @@ class HotelsController extends Controller
         $room = $hotel->rooms()->where('type', '=', $request->roomType)->firstOrFail();
         $calculatedPrice = Hotel::calculatePrice($request->checkIn, $request->checkOut, $room->price);
 
-        $hotelCombination = $room->hotel->name . ' (' . $room->name . ')';
+        $hotelCombination = $room->hotel->name . ' (' . $room->name . ')' . ' x ' . ($request->checkOut - $request->checkIn) . ' nights';
 
         $cartItem = Cart::add($room->id, $hotelCombination, $request->roomQty, $calculatedPrice, ['room type' => $request->roomType]);
         $cartItem->associate('App\Room');

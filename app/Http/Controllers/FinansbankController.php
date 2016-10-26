@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
 use Carbon\Carbon;
 use App\Http\Requests;
 use GuzzleHttp\Client;
@@ -245,12 +246,21 @@ $$TransId = substr (  $result, $posf , $posl - $posf   ) ;
 
 			if ( $Response === "Approved")
 			{
-		  		echo "Ödeme isleminiz basariyla gerçeklestirildi";
+				$order = Order::where('reference', '=', $_POST['oid'])->first();
+
+		  		return redirect()->action('FinansbankController@thankYou', ['orderRef' => $order->reference]);
 	  		}
 			else
 			{
-		        echo "Ödeme isleminiz basariyla gerçeklestirilmedi.Hata=".$ErrMsg;
+		        return redirect()->action('FinansbankController@error')->withErrors($ErrMsg);
 			}
   		}
+    }
+
+    public function thankYou($orderRef)
+    {
+    	$order = Order::where('reference', '=', $orderRef)->firstOrFail();
+    	$time = Carbon::now('Europe/Istanbul');
+    	return view('thankyou', compact('order', 'time'));
     }
 }

@@ -1,6 +1,6 @@
 <div class="col-md-12">
 	<form method="post" action="https://entegrasyon.asseco-see.com.tr/fim/est3Dgate">
-		{{ csrf_field() }}
+			{{ csrf_field() }}
 			<div class="row">
 				<div class="col-md-8">
 					<div class="form-group">
@@ -67,7 +67,7 @@
                     <input type="submit" value="Pay Now" class="btn btn-block btn-danger" />
 				</div>
 			</div>
-            <input type="hidden" name="clientid" value="600100000">
+            <input type="hidden" name="clientid" value="094100000012005">
     
             <input type="hidden" name="amount" value="{!! $total !!}">
             <input type="hidden" name="oid" value="{!! $reference !!}">    

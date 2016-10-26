@@ -42,12 +42,14 @@
 											<option value="">CheckIn</option>
 											<option value="10">Nov 10</option>
 											<option value="11">Nov 11</option>
+											<option value="12">Nov 12</option>
 										</select>
 									</div>
 									<div class="col-md-3">
 										<label for="checkOut">Check Out</label>
 										<select class="form-control" name="checkOut">
 											<option value="">CheckOut</option>
+											<option value="13">Nov 13</option>
 											<option value="14">Nov 14</option>
 											<option value="15">Nov 15</option>
 										</select>

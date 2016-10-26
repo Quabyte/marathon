@@ -29,7 +29,7 @@
             Breakpoints();
         </script>
     </head>
-    <body>
+    <body class="@yield('bodyClass')">
         @include('components.header')
 
         <div class="marathonHeader"></div>

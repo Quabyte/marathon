@@ -22,3 +22,4 @@ Route::get('/payment', 'ShoppingCartController@payment');
 Route::post('/addExtra/{id}', 'ApplicationController@addExtra');
 
 Route::post('/handle3D', 'FinansbankController@handle3D');
+Route::get('/thankyou/{orderRef}', 'FinansbankController@thankYou');
