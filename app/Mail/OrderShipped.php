@@ -22,9 +22,9 @@ class OrderShipped extends Mailable
      *
      * @return void
      */
-    public function __construct(Order $orderRef)
+    public function __construct(Order $order)
     {
-        $this->order = Order::where('reference', '=', $orderRef)->firstOrFail();
+        $this->order = $order;
 
         $user = $this->order->user_id;
 
