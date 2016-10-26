@@ -266,7 +266,7 @@ $$TransId = substr (  $result, $posf , $posl - $posf   ) ;
     	$order->status = 'confirmed';
     	$user = User::find($order->user_id);
     	$time = Carbon::now('Europe/Istanbul');
-    	Mail::to($user->email)->send(new OrderShipped($order));
+    	// Mail::to($user->email)->send(new OrderShipped($order));
     	session()->forget('orderRef');
     	return view('thankyou', compact('order', 'time', 'user'));
     }
