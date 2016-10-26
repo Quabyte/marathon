@@ -65,6 +65,11 @@
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3">
                     <input type="submit" value="Pay Now" class="btn btn-block btn-danger" />
+                    <div class="text-center">
+                    	<i class="icon fa-cc-mastercard" style="font-size: 32px;"></i>
+				    	<i class="icon fa-cc-visa" style="font-size: 32px;"></i>
+				    	<i class="icon fa-cc-amex" style="font-size: 32px;"></i>
+                    </div>
 				</div>
 			</div>
             <input type="hidden" name="clientid" value="600100000">
@@ -80,4 +85,6 @@
             <input type="hidden" name="lang" value="tr">
             <input type="hidden" name="currency" value="949">
     </form>
+    <div class="col-md-3 col-md-offset-6">
+    </div>
 </div>

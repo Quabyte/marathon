@@ -261,6 +261,8 @@ $$TransId = substr (  $result, $posf , $posl - $posf   ) ;
     {
     	$order = Order::where('reference', '=', $orderRef)->firstOrFail();
     	$time = Carbon::now('Europe/Istanbul');
+    	Cart::destroy();
+    	session()->forget('orderRef');
     	return view('thankyou', compact('order', 'time'));
     }
 }
