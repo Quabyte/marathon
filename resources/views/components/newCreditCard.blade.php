@@ -67,7 +67,7 @@
                     <input type="submit" value="Pay Now" class="btn btn-block btn-danger" />
 				</div>
 			</div>
-            <input type="hidden" name="clientid" value="094100000012005">
+            <input type="hidden" name="clientid" value="600100000">
     
             <input type="hidden" name="amount" value="{!! $total !!}">
             <input type="hidden" name="oid" value="{!! $reference !!}">    

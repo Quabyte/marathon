@@ -34,7 +34,13 @@
 					</address>
 				</div>
 
-				<div class="col-md-4 col-md-offset-4 text-right">
+				<div class="col-md-4 text-center">
+					<h4>
+						<img src="{{ asset('images/logo.jpg') }}">
+					</h4>
+				</div>
+
+				<div class="col-md-4 text-right">
 					<h4>Invoice Info</h4>
 					<a class="font-size-26" href="javascript:void(0)">#{{ $order->reference }}</a><br>
 					<span>Invoice Date: {{ $time }}</span>
@@ -46,17 +52,19 @@
 					<thead>
 						<tr>
 							<th>Description</th>
-							<th>Quantity</th>
-							<th>Unit Cost</th>
-							<th>Total</th>
+							<th class="text-center">Quantity</th>
+							<th class="text-right">Unit Cost</th>
+							<th class="text-right">Total</th>
 						</tr>
 					</thead>
 					<tbody>
 						@foreach (Cart::content() as $row)
-							<td>{{ $row->name }}</td>
-							<td>{{ $row->qty }}</td>
-							<td class="text-right">{{ $row->price }}€</td>
-							<td class="text-right">{{ $row->total }}€</td>
+							<tr>
+								<td>{{ $row->name }}</td>
+								<td class="text-center">{{ $row->qty }}</td>
+								<td class="text-right">{{ $row->price }}€</td>
+								<td class="text-right">{{ $row->total }}€</td>
+							</tr>							
 						@endforeach
 					</tbody>					
 				</table>

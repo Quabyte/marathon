@@ -17,12 +17,12 @@ class FinansbankController extends Controller
     public function handle3D(Request $request)
     {
     	$hashparams = $_POST["HASHPARAMS"];
-    	 $hashparamsval = $_POST["HASHPARAMSVAL"];
-	 $hashparam = $_POST["HASH"];
-         $storekey="123456";
-         $paramsval="";
-         $index1=0;
-	 $index2=0;
+	 	$hashparamsval = $_POST["HASHPARAMSVAL"];
+	 	$hashparam = $_POST["HASH"];
+        $storekey="123456";
+        $paramsval="";
+        $index1=0;
+	 	$index2=0;
 
 	 while($index1 < strlen($hashparams))
 	 {
