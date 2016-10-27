@@ -34,7 +34,7 @@
 
 		<div class="form-group {{ $errors->has('birthdate'. $i) ? ' has-error' : '' }}">
 			<label for="birthdate{{$i}}">Birth Date <small>(DD/MM/YYYY)</small></label>
-			<input type="text" name="birthdate{{$i}}" class="form-control" data-plugin="formatter" data-pattern="[[99]]/[[99]]/[[9999]]" required>
+			<input type="text" name="birthdate{{$i}}" class="form-control" placeholder="DD/MM/YYYY" required>
 			@if ($errors->has('birthdate' . $i))
                 <span class="help-block">
                     <strong>{{ $errors->first('birthdate' . $i) }}</strong>
@@ -77,7 +77,7 @@
 
 		<div class="form-group {{ $errors->has('phone'. $i) ? ' has-error' : '' }}">
 			<label for="phone{{$i}}">Phone</label>
-			<input type="text" name="phone{{$i}}" class="form-control" data-plugin="formatter" data-pattern="([[999]]) [[999]]-[[9999]]" required>
+			<input type="text" name="phone{{$i}}" class="form-control" required>
 			@if ($errors->has('phone' . $i))
                 <span class="help-block">
                     <strong>{{ $errors->first('phone' . $i) }}</strong>
