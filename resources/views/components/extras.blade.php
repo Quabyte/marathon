@@ -40,9 +40,14 @@
 						</div>
 
 						<div class="col-md-6">
-							{{ $extra->includes }}
-							{{ $extra->excludes }}
-							{{ $extra->terms }}
+							<h4>Includes</h4>
+							<p>{{ $extra->includes }}</p>
+
+							<h4>Excludes</h4>
+							<p>{{ $extra->excludes }}</p>
+
+							<h4>Terms</h4>
+							<p>{{ $extra->terms }}</p>
 						</div>
 					</div>
 				</div>
