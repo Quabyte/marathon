@@ -56,7 +56,7 @@ class AttendeesController extends Controller
     		$attendee->save();
     	}
 
-        $createdUser = User::where('name', '=', $request->name1)->firstOrFail();
+        $createdUser = User::where('name', '=', $request->email1)->firstOrFail();
         $currentOrder = Order::where('reference', '=', session('orderRef'))->firstOrFail();
         $currentOrder->user_id = $createdUser->id;
         $currentOrder->save();
