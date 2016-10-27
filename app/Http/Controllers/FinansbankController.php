@@ -20,11 +20,10 @@ class FinansbankController extends Controller
 
     public function handle3D(Request $request)
     {
-    	dd($request);
     	$hashparams = $_POST["HASHPARAMS"];
 	 	$hashparamsval = $_POST["HASHPARAMSVAL"];
 	 	$hashparam = $_POST["HASH"];
-        $storekey="TRPS7211";
+        $storekey="123456";
         $paramsval="";
         $index1=0;
 	 	$index2=0;
@@ -38,7 +37,7 @@ class FinansbankController extends Controller
  		$paramsval = $paramsval . $vl; 
 		$index1 = $index2 + 1;
 	}
-	$storekey = "TRPS7211";
+	$storekey = "123456";
 	$hashval = $paramsval.$storekey;
 
 
@@ -58,8 +57,8 @@ class FinansbankController extends Controller
 //             ÖDEME ISLEMI ALANLARI
 
 
-$name="MARATHON";       		//is yeri kullanic adi
-$password="CPGKhrs7V";    		//Is yeri sifresi
+$name="FINANSAPI";       		//is yeri kullanic adi
+$password="FINANS06";    		//Is yeri sifresi
 $clientid=$_POST["clientid"];  		//Is yeri numarasi
 
 $mode = "P";                            //P olursa gerçek islem, T olursa test islemi yapar
@@ -165,7 +164,7 @@ if($mdStatus =="1" || $mdStatus == "2" || $mdStatus == "3" || $mdStatus == "4")
 
 	// Sanal pos adresine baglanti kurulmasi
 	
-        $url = "https://www.fbwebpos.com/fim/api";  //TEST
+        $url = "https://entegrasyon.asseco-see.com.tr/fim/api";  //TEST
         $ch = curl_init();
         
 		curl_setopt($ch, CURLOPT_URL,$url); // set url to post to
