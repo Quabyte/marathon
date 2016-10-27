@@ -43,6 +43,7 @@ $style = [
 
 <body style="{{ $style['body'] }}">
 	<p>Dear Customer, thank you for your purchase!</p>
+	<p>You can find your order summary below. For any questions; please don't hesitate to contact us.</p>
 	<div style="{{ $style['panel'] }}">
 		<div style="{{ $style['panel-body'] }}">
 
