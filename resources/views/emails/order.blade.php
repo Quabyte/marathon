@@ -1,42 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-        <title>38. Vodafone Istanbul Marathon</title>
-        
-        <!--- STYLES -->
-        <link rel="stylesheet" href="https://istanbulmarathon.co/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="https://istanbulmarathon.co/css/bootstrap-extend.min.css">
-        <link rel="stylesheet" type="text/css" href="https://istanbulmarathon.co/css/custom.css">
-        
-        <!-- PLUGINS -->
-        <link rel="stylesheet" type="text/css" href="https://istanbulmarathon.co/css/animsition.min.css">
-        <link rel="stylesheet" type="text/css" href="https://istanbulmarathon.co/css/asScrollable.min.css">
-        	<link rel="stylesheet" type="text/css" href="https://istanbulmarathon.co/css/invoice.min.css">
-        
-        <!-- FONTS -->
-        <link rel="stylesheet" type="text/css" href="https://istanbulmarathon.co/fonts/web-icons/web-icons.min.css">
-        <link rel="stylesheet" type="text/css" href="https://istanbulmarathon.co/fonts/font-awesome/font-awesome.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic">
-
-        <!-- SCRIPTS -->
-        <script src="https://istanbulmarathon.co/js/modernizr.min.js"></script>
-        <script src="https://istanbulmarathon.co/js/breakpoints.min.js"></script>
-        <script>
-            Breakpoints();
-        </script>
+    <style type="text/css" rel="stylesheet" media="all">
+        /* Media Queries */
+        @media only screen and (max-width: 500px) {
+            .button {
+                width: 100% !important;
+            }
+        }
+    </style>
 </head>
-<body>
-	<div class="panel">
-		<div class="panel-body">
 
-			<div class="row">
-				<div class="col-md-4">
-					<h4>
-						<img src="{{ $message->embed('https://istanbulmarathon.co/images/detur_logo.png') }}" class="margin-right-10">
+<?php
+$style = [
+	'body' => 'margin: 0; padding: 0; width: 100%; background-color: #fff;',
+	'panel' => 'position: relative; margin-bottom: 30px; border-width: 0; background-color: #fff; border: 1px solid transparent; border-radius: 4px; box-shadow: 0 1px 1px rgba(0,0,0,.05);',
+	'panel-body' => 'position: relative; padding: 30px 30px;',
+	'row' => 'margin-right: -15px; margin-left: -15px;',
+	'col-md-4' => 'width: 33%;',
+	'h4' => 'font-size: 18px; margin-bottom: 11px;'
+	'margin-right-10' => 'margin-right: 10px;',
+	'col-md-offset-4' => 'width: 33%; margin-left: 33%',
+	'font-size-26' => 'font-size: 26px;',
+	'font-size-20' => 'font-size: 20px;',
+	'table' => 'width: 100%; color: #76838f; margin-bottom: 22px;',
+	'thead' => 'display: table-header-group; vertical-align: middle; border-color: inherit;',
+	'tbody' => 'display: table-row-group; vertical-align: middle; border-color: inherit;'
+	'tr' => 'display: table-row; vertical-align: inherit;',
+	'th' => 'padding: 15px 8px; font-weight: 400; color: #526069; vertical-align: bottom; line-height: 1.5;',
+	'td' => 'padding: 15px 8px; line-height: 1.5; vertical-align: top; border-top: 1px solid #e4eaec;'
+	'text-center' => 'text-align: center !important;',
+	'text-right' => 'text-align: right !important;'
+	'pull-right' => 'float: right !important;',
+	'amount' => 'padding-top: 10px; margin-bottom: 40px; font-size: 20px; border-top: 1px solid #e4eaec;'
+];
+
+?>
+
+<body style="{{ $style['body'] }}">
+	<div style="{{ $style['panel'] }}">
+		<div style="{{ $style['panel-body'] }}">
+
+			<div style="{{ $style['row'] }}">
+				<div style="{{  $style['col-md-4'] }}">
+					<h4 style="{{ $style['h4'] }}">
+						<img src="{{ $message->embed('https://istanbulmarathon.co/images/detur_logo.png') }}" style="{{ $style['margin-right-10']  }}">
 					</h4>
 					<address>
 						Büyükdere Cad. Özsezen İş Merkezi<br>
@@ -47,50 +59,47 @@
 					</address>
 				</div>
 
-				<div class="col-md-4 col-md-offset-4 text-right">
-					<h4>Invoice Info</h4>
-					<a class="font-size-26" href="javascript:void(0)">#{{ $order->reference }}</a><br>
+				<div style="{{ $style['col-md-offset-4']  }}">
+					<h4 style="{{ $style['h4']  }}">Invoice Info</h4>
+					<a style="{{ $style['font-size-26'] }}" href="javascript:void(0)">#{{ $order->reference }}</a><br>
 					To:
-					<p class="font-size-20">{{ $user->name }}</p>
+					<p style="{{ $style['font-size-20'] }}">{{ $user->name }}</p>
 					<span>Invoice Date: {{ $order->created_at }}</span>
 				</div>
 			</div>
 
-			<div class="row">
-				<table class="table table-responsive table-hover">
-					<thead>
-						<tr>
-							<th>Description</th>
-							<th class="text-center">Quantity</th>
-							<th class="text-right">Unit Cost</th>
-							<th class="text-right">Total</th>
+			<div style="{{ $style['row'] }}">
+				<table style="{{ $style['table'] }}">
+					<thead style="{{ $style['thead'] }}">
+						<tr style="{{ $style['tr'] }}">
+							<th style="{{ $style['th'] }}">Description</th>
+							<th style="{{ $style['th'] . $style['text-center'] }}">Quantity</th>
+							<th style="{{ $style['th'] . $style['text-right'] }}">Unit Cost</th>
+							<th style="{{ $style['th'] . $style['text-right'] }}">Total</th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody style="{{ $style['tbody'] }}">
 						@foreach (Cart::content() as $row)
-							<tr>
-								<td>{{ $row->name }}</td>
-								<td class="text-center">{{ $row->qty }}</td>
-								<td class="text-right">{{ $row->price }}€</td>
-								<td class="text-right">{{ $row->total }}€</td>
+							<tr style="{{ $style['tr'] }}">
+								<td style="{{ $style['td'] }}">{{ $row->name }}</td>
+								<td style="{{ $style['td'] . $style['text-center'] }}">{{ $row->qty }}</td>
+								<td style="{{ $style['td'] . $style['text-right'] }}">{{ $row->price }}€</td>
+								<td style="{{ $style['td'] . $style['text-right'] }}">{{ $row->total }}€</td>
 							</tr>							
 						@endforeach
 					</tbody>					
 				</table>
 			</div>
 
-			<div class="row">
-				<div class="text-right clearfix">
-					<div class="pull-right">
-						<p class="page-invoice-amount">TOTAL: <span>{{ Cart::total() }}€</span></p>
+			<div style="{{ $style['row'] }}">
+				<div style="{{ $style['text-right'] }}">
+					<div style="{{ $style['pull-right'] }}">
+						<p style="{{ $style['amount'] }}">TOTAL: <span>{{ Cart::total() }}€</span></p>
 					</div>
 				</div>
 			</div>
 
 		</div>
 	</div>
-
-	<script src="https://istanbulmarathon.co/js/jquery.min.js"></script>
-	<script src="https://istanbulmarathon.co/js/bootstrap.min.js"></script>
 </body>
 </html>
