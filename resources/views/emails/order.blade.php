@@ -20,11 +20,11 @@ $style = [
 	'body' => 'margin: 0; padding: 0; width: 100%; background-color: #fff;',
 	'panel' => 'position: relative; margin-bottom: 30px; border-width: 0; background-color: #fff; border: 1px solid transparent; border-radius: 4px; box-shadow: 0 1px 1px rgba(0,0,0,.05);',
 	'panel-body' => 'position: relative; padding: 30px 30px;',
-	'row' => 'margin-right: -15px; margin-left: -15px;',
-	'col-md-4' => 'width: 33%;',
+	'row' => 'margin-right: -15px; margin-left: -15px; display: block;',
+	'col-md-4' => 'width: 33%; position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px;',
 	'h4' => 'font-size: 18px; margin-bottom: 11px;',
 	'margin-right-10' => 'margin-right: 10px;',
-	'col-md-offset-4' => 'width: 33%; margin-left: 33%',
+	'col-md-offset-4' => 'width: 33%; margin-left: 33%; position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px;',
 	'font-size-26' => 'font-size: 26px;',
 	'font-size-20' => 'font-size: 20px;',
 	'table' => 'width: 100%; color: #76838f; margin-bottom: 22px;',
@@ -42,13 +42,14 @@ $style = [
 ?>
 
 <body style="{{ $style['body'] }}">
+	<p>Dear Customer, thank you for your purchase!</p>
 	<div style="{{ $style['panel'] }}">
 		<div style="{{ $style['panel-body'] }}">
 
 			<div style="{{ $style['row'] }}">
 				<div style="{{  $style['col-md-4'] }}">
 					<h4 style="{{ $style['h4'] }}">
-						<img src="{{ $message->embed('https://istanbulmarathon.co/images/detur_logo.png') }}" style="{{ $style['margin-right-10']  }}">
+						<img src="{{ $message->embed('https://istanbulmarathon.co/images/detur_logo.png') }}">
 					</h4>
 					<address>
 						Büyükdere Cad. Özsezen İş Merkezi<br>
