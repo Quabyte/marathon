@@ -22,21 +22,21 @@ $style = [
 	'panel-body' => 'position: relative; padding: 30px 30px;',
 	'row' => 'margin-right: -15px; margin-left: -15px;',
 	'col-md-4' => 'width: 33%;',
-	'h4' => 'font-size: 18px; margin-bottom: 11px;'
+	'h4' => 'font-size: 18px; margin-bottom: 11px;',
 	'margin-right-10' => 'margin-right: 10px;',
 	'col-md-offset-4' => 'width: 33%; margin-left: 33%',
 	'font-size-26' => 'font-size: 26px;',
 	'font-size-20' => 'font-size: 20px;',
 	'table' => 'width: 100%; color: #76838f; margin-bottom: 22px;',
 	'thead' => 'display: table-header-group; vertical-align: middle; border-color: inherit;',
-	'tbody' => 'display: table-row-group; vertical-align: middle; border-color: inherit;'
+	'tbody' => 'display: table-row-group; vertical-align: middle; border-color: inherit;',
 	'tr' => 'display: table-row; vertical-align: inherit;',
 	'th' => 'padding: 15px 8px; font-weight: 400; color: #526069; vertical-align: bottom; line-height: 1.5;',
-	'td' => 'padding: 15px 8px; line-height: 1.5; vertical-align: top; border-top: 1px solid #e4eaec;'
+	'td' => 'padding: 15px 8px; line-height: 1.5; vertical-align: top; border-top: 1px solid #e4eaec;',
 	'text-center' => 'text-align: center !important;',
-	'text-right' => 'text-align: right !important;'
+	'text-right' => 'text-align: right !important;',
 	'pull-right' => 'float: right !important;',
-	'amount' => 'padding-top: 10px; margin-bottom: 40px; font-size: 20px; border-top: 1px solid #e4eaec;'
+	'amount' => 'padding-top: 10px; margin-bottom: 40px; font-size: 20px; border-top: 1px solid #e4eaec;',
 ];
 
 ?>
