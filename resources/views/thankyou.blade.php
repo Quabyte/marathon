@@ -39,7 +39,7 @@
 					<h4>Invoice Info</h4>
 					<a class="font-size-26" href="javascript:void(0)">#{{ $order->reference }}</a><br>
 					To:
-					<p class="font-size-20">{{ $user->name }}</p>
+					<p class="font-size-20">{{ $user->name . ' ' . $user->surname }}</p>
 					<span>Invoice Date: {{ $time }}</span>
 				</div>
 			</div>

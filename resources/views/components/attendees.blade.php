@@ -33,7 +33,7 @@
 		</div>
 
 		<div class="form-group {{ $errors->has('birthdate'. $i) ? ' has-error' : '' }}">
-			<label for="birthdate{{$i}}">BirthDate</label>
+			<label for="birthdate{{$i}}">Birth Date <small>(DD/MM/YYYY)</small></label>
 			<input type="text" name="birthdate{{$i}}" class="form-control" data-plugin="formatter" data-pattern="[[99]]/[[99]]/[[9999]]">
 			@if ($errors->has('birthdate' . $i))
                 <span class="help-block">

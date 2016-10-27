@@ -39,7 +39,9 @@ class ApplicationController extends Controller
 
         $orderItem = new OrderItem();
         $orderItem->title = $extra->name;
-        $orderItem->price = $extra->price;
+        $orderItem->quantity = session('attendeeQty');
+        $orderItem->unitPrice = $extra->price;
+        $orderItem->subtotal = $extra->price * session('attendeeQty');
         $orderItem->order_id = $order->id;
         $orderItem->created_at = Carbon::now('Europe/Istanbul');
         $orderItem->save();

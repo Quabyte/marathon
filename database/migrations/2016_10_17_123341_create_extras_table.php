@@ -16,7 +16,9 @@ class CreateExtrasTable extends Migration
         Schema::create('extras', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->text('description')->nullable();
+            $table->text('includes')->nullable();
+            $table->text('excludes')->nullable();
+            $table->text('terms');
             $table->string('coverPhoto');
             $table->decimal('price');
             $table->timestamps();

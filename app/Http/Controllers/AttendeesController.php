@@ -32,6 +32,7 @@ class AttendeesController extends Controller
 
         $user = new User;
         $user->name = $request->name1;
+        $user->surname = $request->surname1;
         $user->email = $request->email1;
         $user->password = bcrypt(session('orderRef'));
         $user->created_at = Carbon::now('Europe/Istanbul');

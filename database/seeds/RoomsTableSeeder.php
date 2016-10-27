@@ -14,28 +14,28 @@ class RoomsTableSeeder extends Seeder
         DB::table('rooms')->insert([
         	'hotel_id' => 1,
         	'name' => 'Single Room',
-        	'price' => 32.00,
+        	'price' => 39.00,
             'type' => 1
         ]);
 
         DB::table('rooms')->insert([
         	'hotel_id' => 1,
         	'name' => 'Double Room',
-        	'price' => 56.00,
+        	'price' => 62.00,
             'type' => 2,
         ]);
 
         DB::table('rooms')->insert([
         	'hotel_id' => 2,
         	'name' => 'Single Room',
-        	'price' => 50.00,
+        	'price' => 27.00,
             'type' => 1
         ]);
 
         DB::table('rooms')->insert([
         	'hotel_id' => 2,
         	'name' => 'Double Room',
-        	'price' => 80.00,
+        	'price' => 27.00,
             'type' => 2
         ]);
     }
