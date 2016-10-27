@@ -15,7 +15,7 @@
 	          			<p>Price: {{ $extra->price * session('attendeeQty') }}€</p>		        		
 		        	</div>
 		        	<div class="col-md-6">
-		        		<button data-target="#{{ $extra->name }}" data-toggle="modal" class="btn btn-default btn-outline btn-sm" type="button">Details</button>
+		        		<button data-target="#{{ $extra->id }}" data-toggle="modal" class="btn btn-default btn-outline btn-sm" type="button">Details</button>
 	          			<button type="submit" class="btn btn-success btn-sm">Add to Cart</button>
 		        	</div>
           		</form>
@@ -24,7 +24,7 @@
       	</div>
 	</div>
 
-	<div class="modal" id="{{ $extra->name }}" aria-hidden="true" aria-labelledby="{{ $extra->name }}" role="dialog">
+	<div class="modal" id="{{ $extra->id }}" aria-hidden="true" aria-labelledby="{{ $extra->name }}" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
