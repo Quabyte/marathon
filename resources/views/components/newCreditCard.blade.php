@@ -1,5 +1,5 @@
 <div class="col-md-8 col-md-offset-2" style="padding:15px 25px; background: #eee; border-radius: 5px; border: 1px solid #e1e1e1;">
-	<form method="post" action="https://entegrasyon.asseco-see.com.tr/fim/est3Dgate">
+	<form method="post" action="https://www.fbwebpos.com/fim/est3Dgate">
 			{{ csrf_field() }}
 			<div class="row">
 				<div class="col-md-12">
@@ -76,7 +76,7 @@
                     <input type="submit" value="Pay Now" class="btn btn-block btn-danger" style="margin-top: 10px;" />
 				</div>
 			</div>
-            <input type="hidden" name="clientid" value="600100000">
+            <input type="hidden" name="clientid" value="601117211">
     
             <input type="hidden" name="amount" value="{!! $total !!}">
             <input type="hidden" name="oid" value="{!! $reference !!}">    
