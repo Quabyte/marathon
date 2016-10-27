@@ -17,7 +17,7 @@ class AttendeesController extends Controller
             $messages = [
                 'required' => 'This field is required!'
             ];
-        	$this->validate($request, [
+        	$validator = $this->validate($request, [
     			'identity' . $i => 'required',
     			'name' . $i => 'required',
     			'surname' . $i => 'required',
@@ -28,6 +28,10 @@ class AttendeesController extends Controller
     			'phone' . $i => 'required',
     			'email' . $i => 'required',
     		], $messages);
+
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors()->withInput();
+            }
     	}
 
         $user = new User;
