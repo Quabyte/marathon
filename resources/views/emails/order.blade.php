@@ -59,27 +59,40 @@ $style = [
 		<div style="{{ $style['panel-body'] }}">
 
 			<div style="{{ $style['row'] }}" class="row">
-				<div style="{{  $style['col-md-4'] }}">
-					<h4 style="{{ $style['h4'] }}">
-						<img src="{{ $message->embed('https://istanbulmarathon.co/images/detur_logo.png') }}">
-					</h4>
-					<address>
-						Büyükdere Cad. Özsezen İş Merkezi<br>
-						C Blok Esentepe 34394 İSTANBUL/TÜRKİYE<br> 
-						<abbr title="Mail">Email:</abbr> info@detur.com <br>
-						<abbr title="Phone">Phone:</abbr> +90 212 217 77 60 <br>
-						<abbr title="Fax">Fax:</abbr> +90 212 217 77 40
-					</address>
-				</div>
-
-				<div style="{{ $style['col-md-offset-4']  }}">
-					<img src="{{ $message->embed('https://istanbulmarathon.co/images/logo.jpg') }}">
-					<h4 style="{{ $style['h4']  }}">Invoice Info</h4>
-					<a style="{{ $style['font-size-26'] }}" href="javascript:void(0)">Order Reference: #{{ $order->reference }}</a><br>
-					To:
-					<p style="{{ $style['font-size-20'] }}">{{ $user->name . ' ' . $user->surname }}</p>
-					<span>Invoice Date: {{ $order->created_at }}</span>
-				</div>
+				<table style="{{ $style['table'] }}">
+					<tbody>
+						<tr>
+							<td>
+								<h4 style="{{ $style['h4'] }}">
+									<img src="{{ $message->embed('https://istanbulmarathon.co/images/detur_logo.png') }}">
+								</h4>
+							</td>
+							<td colspan="4"></td>
+							<td>
+								<img src="{{ $message->embed('https://istanbulmarathon.co/images/logo.jpg') }}">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<address>
+									Büyükdere Cad. Özsezen İş Merkezi<br>
+									C Blok Esentepe 34394 İSTANBUL/TÜRKİYE<br> 
+									<abbr title="Mail">Email:</abbr> info@detur.com <br>
+									<abbr title="Phone">Phone:</abbr> +90 212 217 77 60 <br>
+									<abbr title="Fax">Fax:</abbr> +90 212 217 77 40
+								</address>
+							</td>
+							<td colspan="4"></td>
+							<td>
+								<h4 style="{{ $style['h4']  }}">Invoice Info</h4>
+								Order Reference: <a style="{{ $style['font-size-26'] }}" href="javascript:void(0)">#{{ $order->reference }}</a><br>
+								To:
+								<p style="{{ $style['font-size-20'] }}">{{ $user->name . ' ' . $user->surname }}</p>
+								<span>Invoice Date: {{ $order->created_at }}</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 
 			<div style="{{ $style['row'] }}">
