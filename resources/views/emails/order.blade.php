@@ -67,7 +67,7 @@ $style = [
 									<img src="{{ $message->embed('https://istanbulmarathon.co/images/detur_logo.png') }}">
 								</h4>
 							</td>
-							<td colspan="4"></td>
+							<td colspan="6"></td>
 							<td>
 								<img src="{{ $message->embed('https://istanbulmarathon.co/images/logo.jpg') }}">
 							</td>
@@ -82,7 +82,7 @@ $style = [
 									<abbr title="Fax">Fax:</abbr> +90 212 217 77 40
 								</address>
 							</td>
-							<td colspan="4"></td>
+							<td colspan="6"></td>
 							<td>
 								<h4 style="{{ $style['h4']  }}">Invoice Info</h4>
 								Order Reference: <a style="{{ $style['font-size-26'] }}" href="javascript:void(0)">#{{ $order->reference }}</a><br>

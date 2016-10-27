@@ -75,7 +75,7 @@
 				</div>
 			</div>
 
-			<div class="row">
+			{{-- <div class="row">
 				<div class="text-right clearfix">
 					<div class="pull-right">
 						<button type="button" class="btn btn-primary btn-outline" onclick="javascript:window.print()">
@@ -86,7 +86,7 @@
 						</button>
 					</div>
 				</div>
-			</div>
+			</div> --}}
 			
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3 text-center">
