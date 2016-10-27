@@ -270,7 +270,7 @@ $$TransId = substr (  $result, $posf , $posl - $posf   ) ;
     	$orderItems = OrderItem::where('order_id', '=', $order->id)->get();
     	$user = User::findOrFail($userID);
     	$time = Carbon::now('Europe/Istanbul');
-    	// Mail::to($user->email)->send(new OrderShipped($order));
+    	Mail::to($user->email)->send(new OrderShipped($order));
     	session()->forget('orderRef');
     	$order->save();
     	return view('thankyou', compact('order', 'time', 'user', 'orderItems'));
