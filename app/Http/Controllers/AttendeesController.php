@@ -61,7 +61,7 @@ class AttendeesController extends Controller
     		$attendee->passport_number = $request->input("identity$i");
     		$attendee->name = $request->input("name$i");
     		$attendee->surname = $request->input("surname$i");
-    		$attendee->birth_date = Carbon::createFromFormat('d/m/Y', $request->input("birthdate$i"));
+    		// $attendee->birth_date = Carbon::createFromFormat('d/m/Y', $request->input("birthdate$i"));
     		$attendee->gender = $request->input("gender$i");
     		$attendee->country = $request->input("country$i");
     		$attendee->city = $request->input("city$i");

@@ -18,7 +18,7 @@ class CreateAttendeesTable extends Migration
             $table->bigInteger('passport_number');
             $table->string('name');
             $table->string('surname');
-            $table->date('birth_date');
+            $table->date('birth_date')->nullable();
             $table->string('gender');
             $table->string('country');
             $table->string('city');
