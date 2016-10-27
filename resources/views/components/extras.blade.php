@@ -40,12 +40,16 @@
 						</div>
 
 						<div class="col-md-6">
+							<h4>Price: {{ $extra->price }}€/person</h4>
 							<h4>Includes</h4>
 							<p>{{ $extra->includes }}</p>
 
 							<h4>Excludes</h4>
 							<p>{{ $extra->excludes }}</p>
-
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
 							<h4>Terms</h4>
 							<p>{{ $extra->terms }}</p>
 						</div>
