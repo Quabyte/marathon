@@ -46,7 +46,7 @@ class ApplicationController extends Controller
         $orderItem->created_at = Carbon::now('Europe/Istanbul');
         $orderItem->save();
 
-        $cartItem = Cart::add($extra, $extra->name, 1, $extra->price);
+        $cartItem = Cart::add($extra, $extra->name, session('attendeeQty'), $extra->price);
         $cartItem->associate('App\Extra');
 
         return redirect()->back();
