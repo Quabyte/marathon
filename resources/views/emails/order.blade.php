@@ -65,7 +65,7 @@ $style = [
 					<h4 style="{{ $style['h4']  }}">Invoice Info</h4>
 					<a style="{{ $style['font-size-26'] }}" href="javascript:void(0)">#{{ $order->reference }}</a><br>
 					To:
-					<p style="{{ $style['font-size-20'] }}">{{ $user->name }}</p>
+					<p style="{{ $style['font-size-20'] }}">{{ $user->name . ' ' . $user->surname }}</p>
 					<span>Invoice Date: {{ $order->created_at }}</span>
 				</div>
 			</div>
