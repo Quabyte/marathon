@@ -20,7 +20,7 @@ class FinansbankController extends Controller
 
     public function handle3D(Request $request)
     {
-    	dd($response);
+    	dd($request);
     	$hashparams = $_POST["HASHPARAMS"];
 	 	$hashparamsval = $_POST["HASHPARAMSVAL"];
 	 	$hashparam = $_POST["HASH"];
