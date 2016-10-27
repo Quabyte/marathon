@@ -40,7 +40,7 @@
 						</div>
 
 						<div class="col-md-6">
-							<h4>Price: {{ $extra->price }}€/person</h4>
+							<h4>Price: <small>{{ $extra->price }}€/person</small></h4>
 							<h4>Includes</h4>
 							<p>{{ $extra->includes }}</p>
 
