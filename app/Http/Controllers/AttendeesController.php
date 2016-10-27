@@ -8,26 +8,38 @@ use App\Attendee;
 use Carbon\Carbon;
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class AttendeesController extends Controller
 {
     public function create(Request $request)
     {
     	for ($i=1; $i <= session('attendeeQty') ; $i++) { 
-            $messages = [
-                'required' => 'This field is required!'
-            ];
-        	$validator = $this->validate($request, [
-    			'identity' . $i => 'required',
-    			'name' . $i => 'required',
-    			'surname' . $i => 'required',
-    			'birthdate' . $i => 'required',
-    			'gender' . $i => 'required',
-    			'country' . $i => 'required',
-    			'city' . $i => 'required',
-    			'phone' . $i => 'required',
-    			'email' . $i => 'required',
-    		], $messages);
+            $validator = Validator::make($request->all(), [
+                'identity' . $i => 'required',
+                'name' . $i => 'required',
+                'surname' . $i => 'required',
+                'birthdate' . $i => 'required',
+                'gender' . $i => 'required',
+                'country' . $i => 'required',
+                'city' . $i => 'required',
+                'phone' . $i => 'required',
+                'email' . $i => 'required',
+            ]);
+            // $messages = [
+            //     'required' => 'This field is required!'
+            // ];
+      //   	$validator = $this->validate($request, [
+    		// 	'identity' . $i => 'required',
+    		// 	'name' . $i => 'required',
+    		// 	'surname' . $i => 'required',
+    		// 	'birthdate' . $i => 'required',
+    		// 	'gender' . $i => 'required',
+    		// 	'country' . $i => 'required',
+    		// 	'city' . $i => 'required',
+    		// 	'phone' . $i => 'required',
+    		// 	'email' . $i => 'required',
+    		// ], $messages);
 
             if ($validator->fails()) {
                 return redirect()->back()->withErrors()->withInput();
