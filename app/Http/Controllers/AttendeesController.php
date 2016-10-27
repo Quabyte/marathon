@@ -56,9 +56,9 @@ class AttendeesController extends Controller
     		$attendee->save();
     	}
 
-        $createdUser = User::where('name', '=', $request->input('email1'))->firstOrFail();
+        // $createdUser = User::where('name', '=', $request->input('email1'))->firstOrFail();
         $currentOrder = Order::where('reference', '=', session('orderRef'))->firstOrFail();
-        $currentOrder->user_id = $createdUser->id;
+        $currentOrder->user_id = $user->id;
         $currentOrder->save();
 
     	return redirect()->action('ShoppingCartController@payment');
