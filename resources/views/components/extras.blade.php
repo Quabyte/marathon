@@ -15,12 +15,41 @@
 	          			<p>Price: {{ $extra->price * session('attendeeQty') }}€</p>		        		
 		        	</div>
 		        	<div class="col-md-6">
-		        		<a href="#" class="btn btn-default btn-outline btn-sm">Details</a>
+		        		<button data-target="#{{ $extra->name }}" data-toggle="modal" class="btn btn-default btn-outline btn-sm" type="button">Details</button>
 	          			<button type="submit" class="btn btn-success btn-sm">Add to Cart</button>
 		        	</div>
           		</form>
 	        </div>
 	        
       	</div>
+	</div>
+
+	<div class="modal" id="{{ $extra->name }}" aria-hidden="true" aria-labelledby="{{ $extra->name }}" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                    <span aria-hidden="true">×</span>
+                  	</button>
+                  	<h4 class="modal-title">{{ $extra->name }}</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-6">
+							<img src="/images/extras/{{ $extra->coverPhoto }}" class="img-responsive">
+						</div>
+
+						<div class="col-md-6">
+							{{ $extra->includes }}
+							{{ $extra->excludes }}
+							{{ $extra->terms }}
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+                  	<button type="button" class="btn btn-default margin-0" data-dismiss="modal">Close</button>
+                </div>
+			</div>
+		</div>
 	</div>
 @endforeach

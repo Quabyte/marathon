@@ -12,6 +12,17 @@
                 width: 100% !important;
             }
         }
+        .row:before {
+        	display: table;
+        	content: " ";
+        	box-sizing: border-box;
+        }
+        .row:after {
+        	clear: both;
+        	display: table;
+        	content: " ";
+        	box-sizing: border-box;
+        }
     </style>
 </head>
 
@@ -24,7 +35,7 @@ $style = [
 	'col-md-4' => 'width: 33%; position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px; float: left;',
 	'h4' => 'font-size: 18px; margin-bottom: 11px;',
 	'margin-right-10' => 'margin-right: 10px;',
-	'col-md-offset-4' => 'width: 33%; margin-left: 33%; position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px; float:right;',
+	'col-md-offset-4' => 'width: 33%; margin-left: 33%; position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px; float:left;',
 	'font-size-26' => 'font-size: 26px;',
 	'font-size-20' => 'font-size: 20px;',
 	'table' => 'width: 100%; color: #76838f; margin-bottom: 22px;',
@@ -43,11 +54,11 @@ $style = [
 
 <body style="{{ $style['body'] }}">
 	<p>Dear Customer, thank you for your purchase!</p>
-	<p>You can find your order summary below. For any questions; please don't hesitate to contact us.</p>
+	<p>You can find your order summary below. Please don't hesitate to contact us.</p>
 	<div style="{{ $style['panel'] }}">
 		<div style="{{ $style['panel-body'] }}">
 
-			<div style="{{ $style['row'] }}">
+			<div style="{{ $style['row'] }}" class="row">
 				<div style="{{  $style['col-md-4'] }}">
 					<h4 style="{{ $style['h4'] }}">
 						<img src="{{ $message->embed('https://istanbulmarathon.co/images/detur_logo.png') }}">
@@ -62,8 +73,9 @@ $style = [
 				</div>
 
 				<div style="{{ $style['col-md-offset-4']  }}">
+					<img src="{{ $message->embed('https://istanbulmarathon.co/images/logo.jpg') }}">
 					<h4 style="{{ $style['h4']  }}">Invoice Info</h4>
-					<a style="{{ $style['font-size-26'] }}" href="javascript:void(0)">#{{ $order->reference }}</a><br>
+					<a style="{{ $style['font-size-26'] }}" href="javascript:void(0)">Order Reference: #{{ $order->reference }}</a><br>
 					To:
 					<p style="{{ $style['font-size-20'] }}">{{ $user->name . ' ' . $user->surname }}</p>
 					<span>Invoice Date: {{ $order->created_at }}</span>

@@ -24,18 +24,6 @@ class ExtrasTableSeeder extends Seeder
         ]);
 
         DB::table('extras')->insert([
-        	'name' => 'Istanbul by Land & Sea',
-            'includes' => 'Transportation by air conditioned vehicles
-                        Fully escorted by an English speaking tour guide
-                        Admission fees, Lunch',
-            'excludes' => 'Drinks and all personal expenses',
-            'terms' => 'Cancellation can be done a night before for half day morning and full day tours in İstanbul and 4 hours prior to afternoon tour avoid penalty, otherwise full tour rate will be charged.
-                        Children 11 and younger receive 50% discount',
-        	'coverPhoto' => 'istanbul.jpg',
-        	'price' => 80.00,
-        ]);
-
-        DB::table('extras')->insert([
         	'name' => 'A Cruise on the Bosphorus',
             'includes' => 'Transportation by air conditioned vehicles
                         Fully escorted by an English speaking tour guide
@@ -45,18 +33,6 @@ class ExtrasTableSeeder extends Seeder
                         Children 11 and younger receive 50% discount',
         	'coverPhoto' => 'bogaz.jpg',
         	'price' => 40.00,
-        ]);
-
-        DB::table('extras')->insert([
-            'name' => 'The Asiatic Experience',
-            'includes' => 'Transportation by air conditioned vehicles
-                        Fully escorted by an English speaking tour guide
-                        Admission fees',
-            'excludes' => 'Drinks and all peronal expenses',
-            'terms' => 'Cancellation can be done a night before for half day morning and full day tours in İstanbul and 4 hours prior to afternoon tour avoid penalty, otherwise full tour rate will be charged.
-                        Children 11 and younger receive 50% discount',
-            'coverPhoto' => 'asian.jpg',
-            'price' => 40.00, 
         ]);
 
         DB::table('extras')->insert([

@@ -16,7 +16,7 @@
 				<div class="col-md-6 col-md-offset-3">
 					<div class="alert dark alert-icon alert-success" role="alert">
 						<i class="icon wb-check"></i>
-						<p>We have sent an email to {{ $user->email }}. Please check it out for more information.</p>
+						<p>We have sent an email to {{ $user->email }}. Please check it out for more detailed information.</p>
 					</div>
 				</div>
 			</div>
@@ -37,7 +37,7 @@
 
 				<div class="col-md-4 col-md-offset-4 text-right">
 					<h4>Invoice Info</h4>
-					<a class="font-size-26" href="javascript:void(0)">#{{ $order->reference }}</a><br>
+					<a class="font-size-26" href="javascript:void(0)">Order Reference: #{{ $order->reference }}</a><br>
 					To:
 					<p class="font-size-20">{{ $user->name . ' ' . $user->surname }}</p>
 					<span>Invoice Date: {{ $time }}</span>

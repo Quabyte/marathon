@@ -39,6 +39,8 @@ class OrderShipped extends Mailable
     public function build()
     {
         return $this->from('info@detur.com')
-                    ->view('emails.order');
+                    ->view('emails.order')
+                    ->replyTo('info@detur.com')
+                    ->subject('38. Istanbul Marathon Package Purchase');
     }
 }
