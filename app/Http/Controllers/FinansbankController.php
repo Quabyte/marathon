@@ -256,7 +256,7 @@ $$TransId = substr (  $result, $posf , $posl - $posf   ) ;
 	  		}
 			else
 			{
-		        return redirect()->action('FinansbankController@error')->withErrors($ErrMsg);
+		        return redirect()->action('FinansbankController@error', ['ErrMsg' => $ErrMsg]);
 			}
   		}
     }
@@ -274,5 +274,11 @@ $$TransId = substr (  $result, $posf , $posl - $posf   ) ;
     	session()->forget('orderRef');
     	$order->save();
     	return view('thankyou', compact('order', 'time', 'user', 'orderItems'));
+    }
+
+    public function error($ErrMsg)
+    {
+    	$error = $ErrMsg;
+    	return view('components.paymentError', compact('error'));
     }
 }
