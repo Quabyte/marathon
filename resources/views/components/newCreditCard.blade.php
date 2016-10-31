@@ -1,5 +1,5 @@
 <div class="col-md-8 col-md-offset-2" style="padding:15px 25px; background: #eee; border-radius: 5px; border: 1px solid #e1e1e1;">
-	<form method="post" action="https://entegrasyon.asseco-see.com.tr/fim/est3Dgate">
+	<form method="post" action="https://www.fbwebpos.com/fim/est3Dgate">
 			{{ csrf_field() }}
 			<div class="row">
 				<div class="col-md-12">

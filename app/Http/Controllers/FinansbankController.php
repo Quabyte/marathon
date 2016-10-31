@@ -164,7 +164,7 @@ if($mdStatus =="1" || $mdStatus == "2" || $mdStatus == "3" || $mdStatus == "4")
 
 	// Sanal pos adresine baglanti kurulmasi
 	
-        $url = "https://entegrasyon.asseco-see.com.tr/fim/api";  //TEST
+        $url = "https://www.fbwebpos.com/fim/api";  //TEST
         $ch = curl_init();
         
 		curl_setopt($ch, CURLOPT_URL,$url); // set url to post to
